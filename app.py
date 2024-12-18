@@ -9,14 +9,8 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
-# Charger les données
-data = pd.read_csv("C:/Users/gadek/OneDrive/Bureau/M1 IFRI/iris_dataset/a08a1080b88344b0c8a7-0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv")
-
-# Titre de l'application
+data = pd.read_csv("iris.csv")
 st.title("Exploration de la base de données Iris")
-
-# Aperçu des données
 st.header("Aperçu des données")
 st.write(data.head())
 
@@ -24,10 +18,6 @@ st.write(data.head())
 st.sidebar.header("Options de visualisation")
 columns = st.sidebar.multiselect("Choisissez les colonnes à afficher", data.columns, default=data.columns)
 st.write(data[columns].head())
-
-# Statistiques descriptives
-st.header("Statistiques descriptives")
-st.write(data.describe())
 
 # Visualisation des données
 st.header("Visualisations")
